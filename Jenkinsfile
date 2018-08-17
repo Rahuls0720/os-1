@@ -98,7 +98,7 @@ node(NODE) {
                     sh """
                     rpm-ostree --repo=${repo} db diff ${previous_commit} ${commit} > ${WORKSPACE}/pkg_diff.txt
                     mkdir -p ${images}
-                    cp ${WORKSPACE}/pkg_diff.txt ${images}/pkg_diff.txt"
+                    cp ${WORKSPACE}/pkg_diff.txt ${images}/pkg_diff.txt
                     """
                 }
                 sh "ostree --repo=${repo} prune --refs-only --depth=0"
